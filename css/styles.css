@@ -99,7 +99,7 @@ img {
   letter-spacing: 0.02em;
   color: #2e2f42;
   transition: color 250ms;
-  transition: 250ms;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-link:hover {
@@ -116,7 +116,7 @@ img {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: #434455;
-  transition: color 250ms;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-nav:hover {
@@ -173,8 +173,8 @@ img {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  height: 600px;
   margin: 0 auto;
+  max-width: 1440px;
   padding-top: 188px;
   padding-bottom: 188px;
 }
@@ -206,7 +206,7 @@ img {
   background-color: #4d5ae5;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
-  transition:  250ms ;
+  transition:  250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .btn-hero:is(:hover, :focus) {
@@ -373,7 +373,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: 250ms;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .team-soc-link:is(:hover) {
@@ -405,7 +405,7 @@ img {
   fill: #8e8f99;
   width: 168px;
   height: 88px;
-  transition: 250ms;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .customers-link {
@@ -514,11 +514,11 @@ img {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: #4D5AE5;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: 250ms;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .btn-list {
@@ -545,7 +545,7 @@ img {
   background: #f4f4fd;
   border: 1px solid #e7e9fc;
   border-radius: 4px;
-  transition: 250ms;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-btn:is(:hover, :focus) {
@@ -570,7 +570,7 @@ img {
   height: 420px;
   border: 1px solid #e7e9fc;
   position: relative;
-  transition: 250ms;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-list-item:hover .p-overlay{
@@ -665,10 +665,13 @@ padding: 24px;
 display: flex;
 align-items: center;
 justify-content: center;
-margin-left: auto;
+position: absolute;
+top: 24px;
+right: 24px;
 width: 24px;
 height: 24px;
 border-radius: 50%;
+cursor: pointer;
 background-color: #E7E9FC;
 border: 1px solid rgba(0, 0, 0, 0.1);
 }
