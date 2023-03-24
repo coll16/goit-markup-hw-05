@@ -42,7 +42,6 @@ img {
   margin: 0 auto;
 }
 
-
 .header {
   padding-top: 24px;
   padding-bottom: 24px;
@@ -99,6 +98,8 @@ img {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: #2e2f42;
+  transition: color 250ms;
+  transition: 250ms;
 }
 
 .header-link:hover {
@@ -115,6 +116,7 @@ img {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: #434455;
+  transition: color 250ms;
 }
 
 .header-nav:hover {
@@ -133,6 +135,32 @@ img {
   line-height: 24px;
   letter-spacing: 0.02em;
   color: #434455;
+}
+
+.header-studio {
+  
+}
+
+.header-studio::after {
+  content: "";
+  width: 48px;
+  height: 4px;
+  background-color: #404bbf;
+  display: block;
+  border-radius: 2px;
+  position: absolute;
+  margin-top: 21px;
+}
+
+.header-portfolio::after {
+  content: "";
+  width: 66px;
+  height: 4px;
+  background-color: #404bbf;
+  display: block;
+  border-radius: 2px;
+  position: absolute;
+  margin-top: 20px;
 }
 
 .hero {
@@ -167,7 +195,7 @@ img {
   margin: 0 auto;
   border: none;
   margin-top: 48px;
-  max-width: 169px;
+  width: 169px;
   height: 56px;
   font-weight: 500;
   font-size: 16px;
@@ -178,6 +206,7 @@ img {
   background-color: #4d5ae5;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
+  transition:  250ms ;
 }
 
 .btn-hero:is(:hover, :focus) {
@@ -344,6 +373,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: 250ms;
 }
 
 .team-soc-link:is(:hover) {
@@ -375,6 +405,7 @@ img {
   fill: #8e8f99;
   width: 168px;
   height: 88px;
+  transition: 250ms;
 }
 
 .customers-link {
@@ -386,6 +417,7 @@ img {
   justify-content: center;
   border: 1px solid #8e8f99;
   border-radius: 4px;
+  transition: 250ms;
 }
 
 .customers-link:is(:hover) {
@@ -468,8 +500,8 @@ img {
   margin-left: 120px;
 }
 
-.footer-social-link:is(:hover,:focus) {
-  background-color: #31D0AA;
+.footer-social-link:is(:hover, :focus) {
+  background-color: #31d0aa;
 }
 
 .footer-icon {
@@ -486,6 +518,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: 250ms;
 }
 
 .btn-list {
@@ -512,6 +545,16 @@ img {
   background: #f4f4fd;
   border: 1px solid #e7e9fc;
   border-radius: 4px;
+  transition: 250ms;
+}
+
+.portfolio-btn:is(:hover, :focus) {
+  color: #f4f4fd;
+  background-color: #404bbf;
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+  border: 1px solid #404bbf;
 }
 
 .portfolio-list {
@@ -526,14 +569,39 @@ img {
   width: 360px;
   height: 420px;
   border: 1px solid #e7e9fc;
+  position: relative;
+  transition: 250ms;
 }
 
-.portfolio-btn:is(:hover, :focus) {
-  color: #f4f4fd;
-  background-color: #404bbf;
-  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08),
-    0px 2px 2px rgba(0, 0, 0, 0.12);
-  border-radius: 4px;
+.portfolio-list-item:hover .p-overlay{
+transform: translateY(0%);
+
+}
+
+.overlay {
+  position: relative;
+  overflow: hidden;
+}
+
+.p-overlay {
+  position: absolute;
+  width: 360px;
+height: 300px;
+top: 0;
+background-color: #4D5AE5;
+transform: translateY(100%);
+transition: transform 250ms linear;
+}
+
+.overlay-p {
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 24px;
+letter-spacing: 0.02em;
+color: #F4F4FD;
+padding: 40px 32px 0 32px;
 }
 
 .portfolio-img {
@@ -569,4 +637,61 @@ img {
 
 .meditation-tittle {
   letter-spacing: 0.02em;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(46, 47, 66, 0.4);;
+  transition: opacity 250ms linear, visibility 250ms linear;
+}
+
+.modal {
+  width: 408px;
+  min-height: 576px;
+  background-color: #FCFCFC;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
+border-radius: 4px;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+padding: 24px;
+}
+
+.modal-btn {
+display: flex;
+align-items: center;
+justify-content: center;
+margin-left: auto;
+width: 24px;
+height: 24px;
+border-radius: 50%;
+background-color: #E7E9FC;
+border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.modal-btn:hover {
+  background-color: #404BBF;
+}
+
+.modal-btn:hover {
+fill: #ffffff;
+}
+
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.modal-svg {
+  width: 8px;
+  height: 8px;
 }
